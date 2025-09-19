@@ -81,6 +81,13 @@ EOF
     echo "✅ Claude Code configured to use statusline at: $SCRIPT_DIR/statusline.py"
 fi
 
+# Install agents if the directory exists
+if [ -d "$SCRIPT_DIR/claude/agents" ]; then
+    echo ""
+    echo "📦 Installing Claude Code agents..."
+    "$SCRIPT_DIR/claude/install-agents.sh"
+fi
+
 echo ""
 echo "🎉 Installation complete!"
 echo ""
